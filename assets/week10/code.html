@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week11/code.html</title>
+    <style>
+        pre {
+            white-space: pre-wrap; /* Preserve line breaks and wrap long lines */
+        }
+    </style>
+</head>
+<body>
+    <pre><code>
+    
+            #include "Stepper.h"
+            #include "Adafruit_NeoPixel.h"
+            
+            #define LED_PIN     6
+            #define LED_COUNT  71
+            #define BRIGHTNESS 10 // Set BRIGHTNESS to about 1/5 (max = 255)
+            
+            // Declare our NeoPixel strip object:
+            Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+            
+            
+            const int stepsPerRevolution = 32;  // change this to fit the number of steps per revolution for your motor
+            int xCount = 0;
+            int yCount = 0;
+            uint32_t off = strip.Color(0, 0, 0); 
+            uint32_t red = strip.Color(255, 0, 0); 
+            uint32_t white = strip.Color(255, 255, 255);
+            
+            Stepper myStepper1(stepsPerRevolution,8,10,9,11);
+            Stepper myStepper2(stepsPerRevolution,2,4,3,5);
+            
+            void setup() {
+              // initialize the serial port:
+              Serial.begin(9600);
+              delay(5000);
+            
+              pinMode(A0, INPUT);
+              pinMode(A1, INPUT);
+            
+              // set the speed at 200 rpm:
+              pinMode(2, OUTPUT);
+              pinMode(3, OUTPUT);
+              pinMode(4, OUTPUT);
+              pinMode(5, OUTPUT);
+              pinMode(8, OUTPUT);
+              pinMode(9, OUTPUT);
+              pinMode(10, OUTPUT);
+              pinMode(11, OUTPUT);
+            
+              myStepper1.setSpeed(200);
+              myStepper2.setSpeed(200);
+            
+              //pinMode(LED_PIN, OUTPUT);
+              strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+              strip.show();            // Turn OFF all pixels ASAP
+              strip.setBrightness(BRIGHTNESS);
+            }
+            
+            
+            void loop() {
+             
+              int sensorReading = analogRead(A0); // read value from joystick X-axis
+              int sensorReading2 = analogRead(A1); // read value from joystick Y-axis
+              Serial.println(sensorReading);
+              Serial.println(sensorReading);
+            
+              //if joystick is left
+              if (sensorReading < 490) { 
+                  for( int i = 2; i < 19; i++){
+                      strip.setPixelColor(i, white);
+                      strip.show();
+                  }    
+                  myStepper1.step(10);
+              } 
+              // if joystick is right
+              else if (sensorReading > 540) { 
+                  for( int i = 36; i < 54; i++){
+                      strip.setPixelColor(i, white);
+                      strip.show();
+                  }   
+                  myStepper1.step(-10); 
+              }
+              // if joystick is up
+              else if (sensorReading2 < 490) { 
+                  for( int i = 18; i < 38; i++){
+                      strip.setPixelColor(i, white);
+                      strip.show();
+                  }   
+                  myStepper2.step(10); 
+              } 
+              // if joystick is down
+              else if (sensorReading2 > 540) {
+                  for( int i = 54; i < LED_COUNT; i++){
+                      strip.setPixelColor(i, white);
+                      strip.show();
+                  }   
+                  myStepper2.step(-10); 
+              }
+              //if nothing is sensed
+              else {
+                for( int i = 0; i < LED_COUNT; i++) {
+                    strip.setPixelColor(i, off);
+                    strip.show();
+                }  
+              }
+            
+             }
+            
+    </code></pre>
+
+</body>
+</html>
+    
