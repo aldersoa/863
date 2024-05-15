@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week11/code.html</title>
+    <style>
+        pre {
+            white-space: pre-wrap; /* Preserve line breaks and wrap long lines */
+        }
+    </style>
+</head>
+<body>
+    <pre><code>
+    #include "WiFi.h"
+
+    // Replace with your network credentials
+    const char* ssid = "********";
+    const char* password = "********";
+    
+    void initWiFi() {
+        WiFi.mode(WIFI_STA);
+        WiFi.begin(ssid, password);
+        Serial.print("Connecting to WiFi ..");
+        while (WiFi.status() != WL_CONNECTED) {
+        Serial.print('.');
+        delay(1000);
+        }
+        Serial.println();
+        Serial.println(WiFi.localIP());
+    }
+    
+    void setup() {
+        Serial.begin(115200);
+    
+        // Set WiFi to station mode and disconnect from an AP if it was previously connected
+        WiFi.mode(WIFI_STA);
+        WiFi.disconnect();
+        delay(100);
+    
+        initWiFi();
+    }
+    
+    void loop() {
+        Serial.println("You're connected");
+    }
+    </code></pre>
+
+</body>
+</html>
