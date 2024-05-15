@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 8: Computer controlled machining</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">October 30th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/thumbnail.jpeg" alt="Fusion 360"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this assignment, we were asked to make (design + mill + assemble) something big.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">ShopBot</li>
+                                <li class="fs-5">4' x 8' OSB panels</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Creating the outline</h2>
+                                <p class="fs-5 mb-4">This idea started when I thought about how I would store this project when it was completed. I only have so much space in my apartment, so I came up with the idea of creating a wooden sculpture that could later be burned. It wasn't until I was actually milling this that I realized OSB wood releases toxic fumes when burned, but I was deep enough into things that I didn’t care.</p>
+                                <p class="fs-5 mb-4">Once I was settled on the idea, I set out to find a design precedent. The only thing I could find was a decorative campfire centerpiece that I found on Amazon.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/campfires.jpeg" alt="Amazon precedent" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">This turned out to be good enough, because I copied the photo into Illustrator and imaged traced the outline of the shape.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/campfire.jpg" alt="Flat campfire" style="width:100%"></figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/unedited.jpeg" alt="Image trace" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">After that, I made two slits that help the two main pieces slide together and mapped out the holes on the base. Although this could all stand on its own, I still wanted to create a cohesive piece to test my understanding of kerf and tolerances.</p>
+                                <p class="fs-5 mb-4">I added .25" circular (diameter) dogbones to all joints in order to make snapping the pieces together an easier process.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/outlines.jpeg" alt="Outlines" style="width:100%"></figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/dogbones.jpeg" alt="Dogbones" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Milling something big</h2>
+                                <p class="fs-5 mb-4">Once my design was mostly completed, I went through the steps below. If you don't want to use Carbide Create like I did and instead want to use Aspire, follow <a href="https://nathanmelenbrink.github.io/lab/cnc/Shopbot_Aspire.pdf" target="_blank">these</a> steps. Otherwise, follow along:</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Export your design from Illustrator/Fusion 360 as an SVG (DXF wasn't working for any of the students in my section, but SVGs worked for some reason)</li>
+                                    <li class="fs-5 mb-4">Import SVG into Carbide Create - this is where you'll generate your toolpaths</li>
+                                    <li class="fs-5 mb-4">In Carbide Create, add tabs to keep your design steady as it's cut through, adjust your cutting material and its thickness, and select the endmill you'll be using (1/8" double flute upcut)</li>
+                                    <li class="fs-5 mb-4">Simulate your toolpath to make sure it looks right</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/simulate.jpeg" alt="Outlines" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Export your file from Carbide Create as a .c2d - this is what Carbide Motion will be able to understand to actually translate everything into gcode</li>
+                                    <li class="fs-5 mb-4">Import into Carbide Motion</li>
+                                    <li class="fs-5 mb-4">Change endmill on ShopBot to 1/8"</li>
+                                    <li class="fs-5 mb-4">Load your 4x4' OSB onto the ShopBot's bed</li>
+                                    <li class="fs-5 mb-4">Move the mill to the bottom left corner of your material then set the XYZ origin as you wish</li>
+                                    <li class="fs-5 mb-4">Remove OSB from bed</li>
+                                    <li class="fs-5 mb-4">Run a practice route so you can make sure your design won't run off the OSB sheet or hit any screws you plan on using to secure the material</li>
+                                    <li class="fs-5 mb-4">Load in material again</li>
+                                    <li class="fs-5 mb-4">Use a screw on each corner of the bed to secure your material onto the sacrificial layer</li>
+                                    <li class="fs-5 mb-4">Put in earplugs, glasses, and a mask you squid</li>
+                                    <li class="fs-5 mb-4">Start the vacuum attachment that will suck up the shavings</li>
+                                    <li class="fs-5 mb-4">Start the spindle using the "Engage Spindle" button next to the e-stop</li>
+                                    <li class="fs-5 mb-4">Start your job on Carbide Motion</li>
+                                    <div class="row mb-5">
+                                        <div class="col-6">
+                                            <video width="800" height="550" controls>
+                                                <source src="assets/week8/milling.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Once the job has completed, wait for ShopBot to move to the upper right of bed</li>
+                                    <li class="fs-5 mb-4">Remove screws</li>
+                                    <li class="fs-5 mb-4">Remove material from bed</li>
+                                    <li class="fs-5 mb-4">Vacuum</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/finishedonbed.jpeg" alt="Finished on bed" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Assembling something big</h2>
+                                <ol>
+                                    <li class="fs-5 mb-4">Saw through tabs and any remaining OSB to finish cutting out your design. I didn't cut through enough, but only by a little, so I had a little bit of sawing to do.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/needtosaw.jpeg" alt="Need to saw" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Assemble (my tolerances and dogbones made for a perfect fit!)</li>
+                                    <li class="fs-5 mb-4">Cry about the fact that you are unable to mill the base for your design due to resource constraints</li>
+                                    <li class="fs-5 mb-4">Done!</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/finished.jpeg" alt="Finished" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Final thoughts</h2>
+                                <p class="fs-5 mb-4">Overall, another... cool... week. It was unfortunate that the Harvard section couldn't mill for 4-5 weeks past when everyone else had finished, but I'm grateful we got the chance to at all!</p>
+                                <p class="fs-5 mb-4">This wasn't an easy process to figure out the first time, but I can imagine with a few more iterations it'd seem much, much easier. There's so much potential for really cool creations with the ShopBot!</p>
+                                <p class="fs-5 mb-4">If you'd like to recreate this project, you can download my SVG files <a href="assets/week8/week8.zip" target="_blank">here</a>.</p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/cutouts.jpeg" alt="Cutouts" style="width:100%"></figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week8/deepika.jpeg" alt="Deepika" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

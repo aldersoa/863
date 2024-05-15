@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 11: Networking</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">November 19th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week11/assembled.jpeg" alt="Soldered board"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this week, we were asked to design, build, and connect wired or wireless node(s) with a network or bus addresses and a local interface.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">ESP32-S3 Sense (pictured below)</li>
+                                <li class="fs-5">USB-C connector cable</li>
+                            </section>
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week11/unassembled.jpeg" alt="Pin diagram" style="width:100%"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Reading the datasheet</h2>
+                                <p class="fs-5 mb-4">Like I've mentioned in previous weeks, it's important to read the <a href="https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/esp32-s3_datasheet.pdf" target="_blank">datasheet</a> for any components that you're working with. This will help you understand the architecture and language you should use when attempting to communicate with the components various subparts in later programming steps.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Hardware setup</h2>
+                                <p class="fs-5 mb-4">Once I had a better understanding of the components I was working with, I moved on to the hardware setup. This is a very simple process.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Press and hold the boot button (labeled 'B' in the bottom right of board) as you connect the ESP32-S3 to your PC with the USB-C cable.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-10">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week11/pinout.jpeg" alt="Pin diagram" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">You should be able to see the device in your finder.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-4">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/Finder.jpeg" alt="Finder" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Software setup</h2>
+                                <p class="fs-5 mb-4">Once the hardware has been set up, we can move on to the software.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Open the Arduino IDE</li>
+                                    <li class="fs-5 mb-4">Add Seeed Studio XIAO ESP32-S3 board package to the IDE by navigating to Arduino IDE > Settings and under 'Additional Boards Manager URLs' copy and paste: <br><b>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</b></li>
+                                    <li class="fs-5 mb-4">Install the latest version of the board package you just added by navigating to Tools > Board > Boards Manager and searching for "Arduino ESP32 Boards" and "esp32".</li>
+                                    <li class="fs-5 mb-4">Select your board and port so the IDE knows what pieces to connect together hardware-wise. Your board should be under Tools > Board and called "XIAO-ESP32S3".</li>
+                                    <li class="fs-5 mb-4">To test everything, run <a href="assets/week11/code.html" target="_blank">this</a> code sample.</li>
+                                    <li class="fs-5 mb-4">Upload the sketch and verify your results by checking to see that your function is printing out "You're connected".</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week11/connected.jpeg" alt="Finished output" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Final thoughts</h2>
+                                <p class="fs-5 mb-4">I really tried to focus on keeping things as simple as possible this week: interfacing between a microcontroller and computer via wifi. Historically, I've had a really annoying time connecting Arduinos and other peripherals to wifi, so I was fairly surprised at how simple this process was.</p>
+                                <p class="fs-5 mb-4">That said, I did run into a handful of issues where I had to reboot my microcontroller whenever the output said "No serial device connected", which I believe happens whenever you try to reupload code to the microcontroller while it's connected to your wifi network. Overall, another cool week that will definitely come in handy for future projects.</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

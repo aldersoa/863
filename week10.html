@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 10: Output devices</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">November 14th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <div class="col-6">
+                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/lcdscreen.jpeg" alt="Computer vision" style="width:100%"></figure>
+                    </div>
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this assignment, we were asked to add an output device to a microcontroller board we’ve designed and program it to do something.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">Moderate chest pain</li>
+                                <li class="fs-5">Arduino (wifi or BLE enabled)</li>
+                                <li class="fs-5">28BYJ-48 stepper motors (x2)</li>
+                                <li class="fs-5">ULN2003 driver boards (x2)</li>
+                                <li class="fs-5">K2 MB-102 power supply module</li>
+                                <li class="fs-5">Neopixel LED strip</li>
+                                <li class="fs-5">ESP32-S3</li>
+                                <li class="fs-5">ESP32-S3-EYE</li>
+                                <li class="fs-5">Protoboard (optional)</li>
+                                <li class="fs-5">Soldering supplies (optional</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Idea</h2>
+                                <p class="fs-5 mb-4">Similarly to last week, I was really focused on progressing my final project this week. In the last 7 days, I sought out creating a system that would 1) actuate motors and 2) light up LED strips in response to recognizing a human face, which was… a pretty tall order. That said, I was able to get 80% of the way there and feel pretty excited about the progress in general.</p>
+                                <p class="fs-5 mb-4">Just like last week, I started this whole process by sketching out all the components in the device (pictured left) and what pieces were specifically serving as outputs.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/sketcheddiagram.jpeg" alt="Sketched diagram" style="width:100%"></figure>
+                        </div>
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/outputsdiagram.jpeg" alt="Outputs" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Setting up computer vision</h2>
+                                <p class="fs-5 mb-4">This step had more to do with setting up input devices, but I think it’s an important part to include in the documentation of this week because the outputs of the computer vision algorithm is what will end up controlling the stepper motors and LEDs.</p>
+                                <p class="fs-5 mb-4">As a refresher, I did a lot of research over the past few weeks to figure out what microcontroller would be best to support light machine learning and image processing tasks on chip. I ended up landing on the ESP32-S3-EYE development kit (pictured below), which at first glance was exactly what I was looking for. As you’ll come to find later in the documentation here, it didn’t end up being the best choice.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-2">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/esp32s3.jpeg" alt="ESP32-S3-EYE" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">I started this whole process by following <a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/index.html" target="_blank">this</a> tutorial to set up <b>ESP-IDF</b>, which is a software development environment for hardware based on ESP32-S3 chips by Espressif. This process was fairly annoying to do given I had to revert a number of versions of Python packages on my computer, but I eventually did it by uninstalling all python packages and reinstalling based on the requirement/dependency text file in the repository.</p>
+                                <p class="fs-5 mb-4">After that, I went on to start setting up <b>ESP-WHO</b> following <a href="https://github.com/espressif/esp-who" target="_blank">this</a> tutorial, which is an image processing development platform for Espressif chips. It’s really nice because it contains computer vision examples that can be applied to a variety of applications like gesture detection, color detection, and most importantly, human face detection. </p>
+                                <p class="fs-5 mb-4">Once I had my environment set up, then I could start tweaking the code on a template face detection program to spit out the datapoints I want. I ended up taking the midpoint between the left and right eye of whoever was in view of the camera to get a rough estimate of where the viewer is looking. I averaged the coordinates of these two datapoints, then spat them out in a way another microcontroller could understand.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/lcdscreen.jpeg" alt="LCD screen" style="width:100%"></figure>
+                        </div>
+                        <div class="col-8">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/output.jpeg" alt="Computer vision output" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">I got so excited after I’d gotten my basic computer vision program up and running that it took me a moment to realize that the ESP32-S3-EYE doesn’t actually have any pins to communicate directly with another microcontroller (board shown below). It was disappointing to learn that this would have to be done over wifi or BLE, given the potential latency of communication… and also because it meant I STILL wouldn’t be able to connect all of my working input with my working output to end up with a real interactive prototype this week. This isn’t a huge problem, I’ll just work on connecting those pieces during the networking week later on in the semester.</p>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/front.jpeg" alt="ESP32S3EYE front" style="width:100%"></figure>
+                        </div>
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/back.jpeg" alt="ESP32S3EYE back" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Getting motors set up</h2>
+                                <p class="fs-5 mb-4">This is my first time having worked with motors of any kind, so picking what type of motors to use what somewhat difficult. I picked stepper motors because I need precise actuation that DC motors and solenoids wouldn’t be able to give me. I ordered 28BYJ-48 stepper motors with ULN2003 driver boards to match, all powered by a K2 MB-102 power supply module.</p>
+                                <p class="fs-5 mb-4">Once everything was hooked up on my breadboard correctly, it was difficult to find the right initialization order of pins. Some orders made the motors spin in reverse, others didn’t make the motors spin at all (but turned them into hand warmers). I tried every permutation... if you do the math, that's 2^4 = 16 different tries.</p>
+                                <p class="fs-5 mb-4">It may go without saying, but I highly recommend putting a flag on your motors to make it easier to see them spin, otherwise you’re going to be squinting at your motors as you adjust the rotation speed. Before moving onto the LEDs, I ensured I could control the stepper motors with my joystick.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section>
+                                <h2 class="fw-bolder mt-5 mb-4">Getting LED frame set up</h2>
+                                <p class="fs-5">Before I actually started coding anything for this, I put together a frame to see how the experience would feel as I pivoted the frame in different angles and distances from a base mirror. It was made with wood, LED strips, and electrical tape for flexible joints.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <video width="620" height="400" controls>
+                                <source src="assets/week10/experience.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5">Similarly to the stepper motors, I tested the motors with the joystick, but for whatever reason I’m not able to power the motors and my LED strip at the same time— only peripheral or the other (depending on whether I’m using the USB-C or 5V power supply module).</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <video width="620" height="400" controls>
+                                <source src="assets/week10/testinglights.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">To hook up my LEDs with my PCB to test everything, I milled a new development board (traces and outlines <a href="assets/week12/traces.zip" target="_blank">here</a>) that had all the parts I’d need for this week, Input Devices week, and Application/Interface Programming week. I wanted to be able to attach/detach multiple microcontrollers and peripherals with it, which is why it looks a little spaghetti-y.</p>
+                                <p class="fs-5 mb-4">I created the following <a href="assets/week10/code.html" target="_blank">sketch</a> to control my peripherals.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/spaghetti.jpeg" alt="Spaghetti 1" style="width:100%"></figure>
+                        </div>
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week10/spaghetti2.jpeg" alt="Spaghetti 2" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Final thoughts</h2>
+                                <p class="fs-5 mb-4">Two thoughts this week:</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">I wish I had more time. This is a classic thought most people have in this class, I know. I didn’t get around to soldering my board together, but at least that means when I do solder it to a protoboard (or maybe newly milled PCB) in coming weeks, I’ll have a better idea of how my connections need to be between the ESP32-S3-EYE and the rest of the peripherals.</li>
+                                    <li class="fs-5 mb-4">Change one goddamn component in your circuit at a time, and know exactly why you’re changing it. Do you need a different microcontroller because yours doesn’t have enough pins? Great! Now find one that solves that issue WHILE MAINTAINING THE SAME FUNCTIONALITY OF YOUR PREVIOUS MICROCONTROLLER. Sure, a Raspberry Pi Pico may have a lot of pins, but does it have the same amount of processing power? What kind of current does it draw? Is it able to communicate with the peripherals elsewhere on your board, or will it just create issues for you later?</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+
+
+
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

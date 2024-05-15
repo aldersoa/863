@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 5: Electronics design</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">October 10th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/screenshot1.jpeg" alt="Schematic"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this project, we were asked to use an EDA tool to design a development board to interact and communicate with an embedded microcontroller.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">Autodesk Fusion 360 / Eagle</li>
+                                <li class="fs-5">A will to live</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Idea</h2>
+                                <p class="fs-5 mb-4">For this week, I wanted to start piecing together a prototyping board so I could start controlling stepper motors with a camera module as input on an ESP32S3 (see datasheet <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf" target="_blank">here</a> ).</p>
+                                <p class="fs-5 mb-4">The ESP32-S3 consists of high-performance dual-core microprocessor, a low power coprocessor, a Wi-Fi baseband, a Bluetooth LE baseband, RF module, and numerous peripherals.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-10">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/esp32s3pinout.jpeg" alt="ESP32S3 pinout" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Goal</h2>
+                                <p class="fs-5 mb-4">First up, you need to determine what you want your circuit board to do. In my case, I wanted to create a development board with an embedded microcontroller that would be able to both sense and actuate stepper motors.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Components</h2>
+                                <p class="fs-5 mb-4">Next, what components do you need to include in your circuit? List them out and their respective connections (power, ground, data, etc.)</p>
+                                <p class="fs-5 mb-4">In my case, I needed a camera to connect to the ESP32S3's B2B connector, so I picked the OV2640 (pictured below). Beyond that I wanted to make sure I included plenty of data controls and extra power hookups for motor drivers, joystick controls, and other peripherals I plan on testing with in later weeks.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-10">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/esp32s3pretty.jpeg" alt="OV2640" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Sketching</h2>
+                                <p class="fs-5 mb-4">This is definitely optional, but it helped me understand how to connect my board when I could draw lines between components first (i.e. sketch your whole board out). Starting out on Eagle is a pain in the ass, so I highly recommend making sure you know exactly what you're trying to create before starting to use any EDA software.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/badsketch.jpeg" alt="Bad sketch" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">EDA</h2>
+                                <p class="fs-5 mb-4">To outline your PCB design/schematic, open up an EDA software of your choice (I used Eagle in Fusion360) and start with the schematic view. There, place all the components you plan on working with in your schematic view, THEN worry about labeling each components with its respective connection.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-10">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/screenshot1.jpeg" alt="Schematic" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">Once that was done, I switched over to PCB view, modified the size of my overall board and manually routed connections between my various components. The auto-route function we were warned about definitely sucks, but it was interesting to see where it would fail to realize its mistakes (cutting corners too close, overlapping lines, etc.)</p>
+                                <p class="fs-5 mb-4">I then went to the command line to export my layers to a PNG file that the CNC machine will be able to use in coming weeks, and used the following command to export my design to a monochrome PNG file with a DPI of 400:</p>
+                                <p class="fs-5 mb-4"><i>export image schematic.png monochrome 400</i></p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-10">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/screenshot2.jpeg" alt="PCB view" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">The final product</h2>
+                                <p class="fs-5 mb-4">To be honest, this isn't my best work. I need to clean this PNG up in Photoshop if I realistically want to print it. It includes the labels from my schematic because I didn't have access to a simplified command called 'run singleImages' that the teaching team had created for this, and had to rely on Fusion 360 help articles... which are incredibly low quality and hard to understand.</p>
+                                <p class="fs-5 mb-4">Moving into next week, I plan on clarifying if this is the right output (pictured below) and how I can create my own scripts in Eagle for exporting ease.</p>
+                                <p class="fs-5 mb-4">If you'd like to recreate this project, you can download my PNG files <a href="assets/week5/week5.zip" target="_blank">here</a>.</p>
+
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-10">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/schematic.jpeg" alt="Final" style="width:100%"></figure>
+                        </div>
+                    </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

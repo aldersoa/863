@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 6: Electronics production</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">October 15th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/clean.jpeg" alt="Clean"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this project, I made and tested the development board that I designed last week.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">Roland SRM-20</li>
+                                <li class="fs-5">Double sided tape</li>
+                                <li class="fs-5">PCB blanks (8" x 5")</li>
+                                <li class="fs-5">Lead free solder</li>
+                                <li class="fs-5">Soldering gun</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Idea</h2>
+                                <p class="fs-5 mb-4">This week was all about learning how to mill your own PCB board. The schematic I created last week is a development board that enables me to more easily connect jumper wires, sensors, and other peripherals to the microcontroller.</p>
+                                <p class="fs-5 mb-4">As an interesting side note, the SRM-20 is a pretty powerful tool! It's the desktop milling machine we used for this week, but it can also be used to precision mill other materials like modeling wax, foam, acrylic, and much more.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Fixing my schematic</h2>
+                                <p class="fs-5 mb-4">The PNG that I ended up with last week had a few issues I needed to fix before I could start the printing process (bottom left image). After wanting to pull my hair out with Fusion 360, I resorted to Adobe Illustrator (like I always do) to get rid of the text, make all the pads totally filled in, and increase the route width to .1". Then, I exported the new schematic image (bottom middle image) w/ its respective outline (bottom right image) as PNG's from Illustrator.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/schematic.jpeg" alt="Bad schematic" style="width:100%"></figure>
+                        </div>
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/schematic.jpeg" alt="Fixed schematic" style="width:100%"></figure>
+                        </div>
+                        <div class="col-4">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/schematicoutline.jpg" alt="Outline" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Setup</h2>
+                                <p class="fs-5 mb-4">To ensure you don't hurt the bed on the milling machine, you'll need to secure a sacrificial layer under the PCB blank you intend on milling. I used an old PCB board for this. Then, secure the PCB blank you intend on milling on top of that with double-sided tape-- nothing fancy here. Now, your setup should look like the photo on the right.</p>
+                                <div class="row mb-4">
+                                    <div class="col-4">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/materials.jpeg" alt="Materials" style="width:100%"></figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/blank.jpeg" alt="Blank PCB" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                                <p class="fs-5 mb-4">Next, turn on the machine and make sure it's plugged in to your computer via the webUSB connection. From here, I followed the TA's instructions that were posted <a href="https://github.com/leomcelroy/fab-notes/blob/main/MODS-SRM20.md" target="_blank">here</a>. Contrary to the way I typically document these weeks, I'm going to keep this in bullet point formatting for ease of parsing.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Go to [mods website](https://modsproject.org/)</li>
+                                    <li class="fs-5 mb-4">Right click to open the menu</li>
+                                    <li class="fs-5 mb-4">Select 'programs'</li>
+                                    <li class="fs-5 mb-4">Select 'open program'</li>
+                                    <li class="fs-5 mb-4">Select 'SRM-20 mill' > 'PCB'</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Milling the traces</h2>
+                                <p class="fs-5 mb-4">Now that you've selected the milling program you intend on using, you'll need to select the file you intend on using for the designs on top of your board. Traces are always milled first and include pads, routes, and other components you included in your schematic. These will be milled to a depth that engraves through the PCB conductive layer, but won't cut through the whole board like the outline will. In this board, I used a 1/64" endmill(pictured on left) for my traces and a 1/32" endmill (pictured on right) for my outline. If at any point in the milling process you see a blinking light on the back right of the top of the machine, it means it performed an emergency reset. You'll need to turn the machine off and back on to start all over again.</p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/endmills.jpeg" alt="Endmills" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                                <ol>
+                                    <li class="fs-5 mb-4">Select your PNG</li>
+                                    <li class="fs-5 mb-4">Hit 'mill traces'</li>
+                                    <li class="fs-5 mb-4">Click 'Calculate', then wait for a moment as the toolpaths generate - mods uses RML, which serves the same purpose as Gcode to a 3D printer</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/toolpath.jpeg" alt="Toolpath" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Hit 'Get Device'</li>
+                                    <li class="fs-5 mb-4">Select 'SRM-20'</li>
+                                    <li class="fs-5 mb-4">Insert the 1/64 in endmill</li>
+                                    <li class="fs-5 mb-4">Move to your desired x,y location at a safe z height (~50mm) - always start out higher than you think! You risk breaking a drill bit or scraping your board if it's too low.</li>
+                                    <li class="fs-5 mb-4">Use 'move to origin' to move the machine</li>
+                                    <li class="fs-5 mb-4">Set the z-axis to 10mm in the 'Home' section</li>
+                                    <li class="fs-5 mb-4">Loosen the endmill and lower it manually till it touches the copper plate then tighten it - this is an awkward process that requires you to bend your hand in weird shapes within the machine. If it feels wrong, you're probably doing the right thing here.</li>
+                                    <li class="fs-5 mb-4">Close the door and hit 'send file' - by sending the file, you're running the program. At first, the drill bit was hovering 10mm above my board for the entirety of the program (see photo below), so this step took a little bit of trial and error. If it is, stop the program and restart everything, this time using a lower z-height. I ended up using 10mm, but that might be subject to change.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/hover.jpeg" alt="Hovering mill" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Vacuum - hold down your board with a pencil or something as you use a shop vac around your board. If you're not careful you'll scrape your board with the tip of the vacuum.</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Milling the outline</h2>
+                                <p class="fs-5 mb-4">Milling the outline is very similar to milling the traces. The only things that differ are your input image and endmill size.</p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/endmills.jpeg" alt="Endmills" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                                <ol>
+                                    <li class="fs-5 mb-4">Select your PNG</li>
+                                    <li class="fs-5 mb-4">Hit 'mill outline'</li>
+                                    <li class="fs-5 mb-4">Click 'Calculate', then wait for a moment as the toolpaths generate</li>
+                                    <li class="fs-5 mb-4">Hit 'Get Device'</li>
+                                    <li class="fs-5 mb-4">Select 'SRM-20'</li>
+                                    <li class="fs-5 mb-4">Insert the 1/32 in endmill</li>
+                                    <li class="fs-5 mb-4">Move to your desired x,y location at a safe z height (~50mm)</li>
+                                    <li class="fs-5 mb-4">Use 'move to origin' to move the machine</li>
+                                    <li class="fs-5 mb-4">Set the z-axis to 10mm in the 'Home' section</li>
+                                    <li class="fs-5 mb-4">Loosen the endmill and lower it manually till it touches the copper plate then tighten it - this is an awkward process that requires you to bend your hand in weird shapes within the machine. If it feels wrong, you're probably doing the right thing here.</li>
+                                    <li class="fs-5 mb-4">Close the door and hit 'send file'- when your program is done, it should look like this:</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/vacuum.jpeg" alt="Vacuum" style="width:100%"></figure>
+                                        </div>
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/clean.jpeg" alt="Clean" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Vacuum - hold down your board with a pencil or something as you use a shop vac around your board. If you're not careful you'll scrape your board with the tip of the vacuum.</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Soldering</h2>
+                                <p class="fs-5 mb-4">Before soldering, I was a little nervous my routes weren't thick enough to conduct electricity, so I used a multimeter to test various connections. Everything worked so I proceeded with soldering on some components.</p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/multimeter.jpeg" alt="Multimeter" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                                <ol>
+                                    <li class="fs-5 mb-4">Gather all the components you want to add to your board</li>
+                                    <li class="fs-5 mb-4">Put on safety glasses and turn on local exhaust</li>
+                                    <li class="fs-5 mb-4">Turn on soldering iron</li>
+                                    <li class="fs-5 mb-4">Tape down loose components</li>
+                                    <li class="fs-5 mb-4">Solder joints</li>
+                                    <li class="fs-5 mb-4">Wipe down surfaces and wash hands</li>
+                                </ol>
+                                <p class="fs-5 mb-4">I ended up with the following board, which I'm NOT pleased with. Our lab didn't have the right header pins and connectors so I ended up melting plastic onto one pad, rendering that connection useless. At another point, I pulled away too abruptly and accidentally pulled up the conductive metal layer on my board. The final result is... uninspiring, to say the least. That said, if I was going to improve this in the future I'd get the right components first, then practice adding AND removing solder. I couldn't find braided wire in the lab, so that may have helped me remove unwanted connections. Overall, this was a neat week-- I learned a lot and definitely feel empowered.</p>
+                                <p class="fs-5 mb-4">If you'd like to recreate this project, you can download my SVG files <a href="assets/week6/week6.zip" target="_blank">here</a>.</p>
+
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-8">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week6/soldered.jpeg" alt="Soldered" style="width:100%"></figure>
+                        </div>
+                    </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

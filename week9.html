@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 9: Input devices</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">November 6th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/circuitinprogress.jpeg" alt="Circuit in progress"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this assignment, we were asked to measure something (i.e. add a sensor to a microcontroller board that we designed and read it)</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">Espressif ESP32S3-EYE</li>
+                                <li class="fs-5">Joystick (analog)</li>
+                                <li class="fs-5">Arduino MKR/Nano</li>
+                                <li class="fs-5">Protoboard</li>
+                                <li class="fs-5">Soldering supplies</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Idea</h2>
+                                <p class="fs-5 mb-4">This week is heavily related to my final project, in that I want to start creating a device that can control the pan and tilt of a dual axis mirror using computer vision. To put it more simply, the input here is a set of coordinates that are computed using facial detection software. These coordinates will then be sent to LEDs and stepper motors in next week’s assignment on output devices.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Process</h2>
+                                <p class="fs-5 mb-4">Going in line with past learnings I’ve had working with electronics, I started this whole process by listing out everything I needed my device to do— this included inputs, outputs, and any microcontrollers I would need along the way to communicate between the peripherals. This process resulted in the diagram on the left.</p>
+                                <p class="fs-5 mb-4">Once that was done, I was able to identify which components in this device were serving as the "inputs", pictured on the right.</p>
+                            </section>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/sketcheddiagram.jpeg" alt="Sketched diagram" style="width:100%"></figure>
+                            </div>
+                            <div class="col-6">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/inputsdiagram.jpeg" alt="Inputs" style="width:100%"></figure>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">At first, I was pretty sure I wanted to use the OV2640, which is a camera module that can attach to ESP32S3’s for simple camera applications like video streaming and low level image processing (pictured below).</p>
+                            </section>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week5/esp32s3pretty.jpeg" alt="ESP32S3 with OV2640" style="width:100%"></figure>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">Amazon fucked up and sent me the wrong product entirely, so I didn’t get this camera module at all this week. During the time I spent waiting for my camera module to arrive, I spent a lot of time exploring other microcontroller and development kits. What I found during this process is that facial detection and recognition are incredibly expensive computing tasks for any microcontroller to handle.</p>
+                                <p class="fs-5 mb-4">For my final project, I want to make sure whatever I end up creating can handle image processing on-chip (i.e. without Wifi/cloud connection). I knew going forward I’d be fairly limited on what I could use, so I ended up opening an issue on the class gitlab and the ESP32S3-EYE development kit was recommended as a cheaper way to handle on-chip image processing at a moderate rate with a pre-built facial detection library.</p>
+                            </section>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/ESP32S3EYE.jpeg" alt="ESP32S3-EYE" style="width:100%"></figure>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">While waiting for my ESP32S3-EYE development kit to arrive, I started working on the rest of the input function: converting X and Y-axis analog data to instructions for my stepper motors and LEDs to intake. That way, I can plug and play my camera straight into my circuit when it arrives next week. In order to do this, I used a joystick that computes an analog signal whenever moved in X and Y directions, then converted that data into logic the stepper motors would be able to understand.</p>
+                                <p class="fs-5 mb-4"><b>My first error</b> occurred when I got ahead of myself and tried to hook up inputs and outputs at the same time without validating I had a functioning circuit component by component. Without realizing it, I had sent current from both my computer’s USB-C port and an external 5V power supply, which resulted in me frying my Arduino. After learning from my mistake, I disconnected my power supply until I would need it later and used just my USB-C power.</p>
+                                <p class="fs-5 mb-4"><b>My second error</b> was that I didn’t connect my microcontroller and attached joystick to a common ground, which resulted in highly variable and flawed sensing data. On a previous personal programming project, I had the same phenomenon occur where my LEDs were randomly flickering, regardless of how I programmed it, so I knew fairly quickly how to diagnose this issue. Once that issue was resolved, I was able to read analog input from a joystick and convert it into coordinates that my LED strip and stepper motors will be able to understand next week when we work on output devices.</p>
+                                <p class="fs-5 mb-4">To hook my analog sensor up with my RP2040, I milled a new development board (traces and outlines <a href="assets/week12/traces.zip" target="_blank">here</a>) that had all the parts I’d need for this week, Output Devices week, and Application/Interface Programming week.</p>
+                                <p class="fs-5 mb-4">I created the following <a href="assets/week10/code.html" target="_blank">sketch</a> to control my peripherals.</p>
+                            </section>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/board.jpeg" alt="Dev board" style="width:100%"></figure>
+                            </div>
+                            <div class="col-6">
+                                <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/boardwithboard.jpeg" alt="Dev board with ESP32" style="width:100%"></figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <section class="mb-4">
+                            <h2 class="fw-bolder mt-5 mb-4">Final thoughts</h2>
+                            <p class="fs-5 mb-4">This was a heavy research week. I had a ton of ideas that didn’t work out at all, which felt really frustrating in the moment but I really think I learned a lot about the limitations of various microcontrollers, how current flows through circuits with multiple outputs (which is something that has always confused me), and I rediscovered the importance of taking 15 minute breaks in the midst of debugging circuits. Fresh eyes and a clear mind do wonders for finding a rogue wire that’s breaking everything.</p>
+                            <p class="fs-5 mb-4">Lastly, and most importantly, if something smells like it’s burning, it probably is.</p>
+                        </section>
+                        <div class="row mb-5">
+                            <div class="col-6">
+                                <video width="550" height="800" controls>
+                                    <source src="assets/week9/testing.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

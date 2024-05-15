@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 3: Embedded programming</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">September 24th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/board.jpeg" alt="Soldered board"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this project, we were asked to write a program for a microcontroller development board that enables it to interact with local input and/or output. For bonus points, we could use different languages, explore new development environments, or attach external components.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">XIAO RP2040</li>
+                                <li class="fs-5">USB-C connector cable</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Reading the datasheet</h2>
+                                <p class="fs-5 mb-4">Before starting any development, it's important to read the <a href="https://files.seeedstudio.com/wiki/XIAO-RP2040/res/rp2040_datasheet.pdf" target="_blank">datasheet</a> for the components that you're working in order to understand the architecture and language you should use when attempting to communicate with the components various subparts in later programming steps. If the datasheet feels too complicated, I recommend going to <a href="https://www.circuitstate.com/tutorials/getting-started-with-raspberry-pi-pico-rp2040-microcontroller-board-pinout-schematic-and-programming-tutorial/" target="_blank">this site</a> that breaks down the datasheet.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Things I got confused about</h2>
+                                <p class="fs-5 mb-4">As I went through this process of reading the datasheet, I had a number of questions bobbling around my head so I've decided to write them down in the hopes that they help you.</p>
+                                <ul>
+                                    <li class="fs-5 mb-4">Microcontroller vs. Microprocessor: despite my background as a computer scientist, I've had very little education when it comes to computer architecture, so I was still a little fuzzy on the difference between a microcontroller and microprocessor. Simply put, a microcontroller is basically an all inclusive system that could function as a computer on its own- it has memory, input, output, and so on. A microprocessor is a subpart of the microcontroller in many ways-- it has to use a system bus or some other means of interfacing with other parts of the chip like the serial interface, the timer, I/O ports, etc. (ADD SKETCH)</li>
+                                    <li class="fs-5 mb-4">Pin naming: across data sheets and programs, you may have noticed a variation in the way pins are numbered and referred to. My Arduino sketch could say pin 3, but the data sheet could actually be referencing pin 26. So, why don't they line up? Well, we have different naming conventions to reference different perspectives we're viewing the pin from.
+                                    <ul class="mt-4">
+                                        <li class="fs-5 mb-4">PIN: viewing the pins as numbered on the board (ex. my board has '2' written on this GPIO pin)</li>
+                                        <li class="fs-5 mb-4">BCM: viewing the pins as numbered by the chip on the microcontroller (ex. the Raspberry Pi datasheet says we should be referencing this part of the microprocessor using this pin)</li>
+                                    </ul>
+                                    <li class="fs-5 mb-4">XIAO RP2040 vs. Raspberry Pi Pico: I saw these mentioned interchangeably across numerous tutorials online but ended up finding out that both of the boards actually contain an RP2040 chip and both are compatible with many of the same IDEs. That said, there are a number of the differences including price (the XIAO is more expensive), size (the XIAO is smaller), and pin number (the XIAO has fewer pins). (ADD SKETCH)</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Hardware setup</h2>
+                                <p class="fs-5 mb-4">Once I had a better understanding of the components I was working with, I moved on to the hardware setup. This is a very simple process.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Press and hold the boot button (labeled 'B' in the bottom right of board) as you connect the RP2040 to your PC with the USB-C cable.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/pindiagram.jpg" alt="Pin diagram" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">You should be able to see the device in your finder.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-4">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/Finder.jpeg" alt="Finder" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Software setup</h2>
+                                <p class="fs-5 mb-4">Once the hardware has been set up, we can move on to the software.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Install and open whatever IDE you feel like using. In this case, I used the Arduino IDE but you could just as well use Visual Studio, Raspberry Pi IDE, etc.</li>
+                                    <li class="fs-5 mb-4">Add Seeed Studio XIAO RP2040 board package to the IDE by navigating to Arduino IDE > Settings and under 'Additional Boards Manager URLs' copy and paste the following URL: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json</li>
+                                    <li class="fs-5 mb-4">Install the latest version of the board package you just added by navigating to Tools > Board > Boards Manager and searching for "Raspberry Pi Pico/RP2040" and hitting 'Install'.</li>
+                                    <li class="fs-5 mb-4">Select your board and port so the IDE knows what pieces to connect together hardware-wise. Your board should be under Tools > Board and called "Raspberry Pi Pico/RP2040".</li>
+                                    <li class="fs-5 mb-4">To test everything, open up a sample program (or "sketch") created by Arduino. This is found under File > Examples > 01. Basics > Blink</li>
+                                    <li class="fs-5 mb-4">Upload the sketch and verify your results by checking to see if the LED on the RP2040 is blinking red once every second.</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/thumbnail.jpeg" alt="Finished piece" style="width:100%"></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 12: Application/Interface programming</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">November 27th, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/boardwithboard.jpeg" alt="Board with board"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this week, we were asked to design, build, and connect wired or wireless node(s) with a network or bus addresses and a local interface.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">ESP32-S3 Sense (pictured below)</li>
+                                <li class="fs-5">USB-C connector cable</li>
+                                <li class="fs-5">Analog joystick (w/ breakout board)</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Reading the datasheet</h2>
+                                <p class="fs-5 mb-4">You already know what I'm going to say-- it's important to read the <a href="https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/esp32-s3_datasheet.pdf" target="_blank">datasheet</a> for any components that you're working with. This will help you understand the architecture and language you should use when attempting to communicate with the components various subparts in later programming steps.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Hardware setup</h2>
+                                <ol>
+                                    <li class="fs-5 mb-4">Press and hold the boot button (labeled 'B' in the bottom right of board) as you connect the ESP32-S3 to your PC with the USB-C cable.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-10">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week11/pinout.jpeg" alt="Pin diagram" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">You should be able to see the device in your finder.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-4">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week3/Finder.jpeg" alt="Finder" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Software setup</h2>
+                                <p class="fs-5 mb-4">Once the hardware has been set up, we can move on to the software.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Open the Arduino IDE</li>
+                                    <li class="fs-5 mb-4">Add Seeed Studio XIAO ESP32-S3 board package to the IDE by navigating to Arduino IDE > Settings and under 'Additional Boards Manager URLs' copy and paste: <br><b>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</b></li>
+                                    <li class="fs-5 mb-4">Install the latest version of the board package you just added by navigating to Tools > Board > Boards Manager and searching for "Arduino ESP32 Boards" and "esp32".</li>
+                                    <li class="fs-5 mb-4">Select your board and port so the IDE knows what pieces to connect together hardware-wise. Your board should be under Tools > Board and called "XIAO-ESP32S3".</li>
+                                    <li class="fs-5 mb-4">Upload the following <a href="assets/week12/code.html" target="_blank">code</a>. This program will create a web server that you can connect to and will continuously update the readings from your sensor.</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Connecting input</h2>
+                                <ol>
+                                    <li class="fs-5 mb-4">Connect joystick’s X and Y to A0 and A1, respectively</li>
+                                    <li class="fs-5 mb-4">Connect the XIAO’s 5V to joystick module’s VCC</li>
+                                    <li class="fs-5 mb-4">Connect the XIAO’s ground to the joystick’s ground</li>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week9/thumbnail.jpeg" alt="Everything connected" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Final thoughts</h2>
+                                <p class="fs-5 mb-4">What did I learn? Lots of things! How to host a website, how to continuously update it, how to send styling information via <i>client.println</i>, how to debug your internet connection... the list goes on.</p>
+                                <p class="fs-5 mb-4">I'm doing everything in my power to stay on top of school, and this week definitely threw me for a loop. After having some difficulty understanding the assignment at hand, I finally settled on my plan, but kept running into bugs with the Arduino IDE, a faulty XIAO, then wifi connectivity/permission issues with my internet provider at home.</p>
+                                <p class="fs-5 mb-4">On top of all that, someone literally stole my development board and peripherals when I left my desk for a brief moment, so I'm missing photos of it working. I'm done with this week. Roast me, I don't care. There are just some weeks here that I'm learning a lot, but have nothing cool to show at the end. I'm just trying to survive, man.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week12/thisisfine.jpeg" alt="Everything is on fire" style="width:100%"></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gail Alderson HTMAA 2023</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="index.html">Gail Alderson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <!-- if you wanna put a header description, do it here -->
+            </div>
+        </header>
+        <!-- Page Content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-10">
+                        <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Week 7: Molding & casting</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">October 23rd, 2023</div>
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/thumbnail.jpeg" alt="Clean"></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        <h2 class="fw-bolder mb-4 mt-5">Background</h2>
+                        <p class="fs-5 mb-4">For this assignment, we were asked to design a mold, mill it, and use it to cast parts.</p>
+                    </section>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Materials</h2>
+                                <li class="fs-5">ShopBot</li>
+                                <li class="fs-5">Machinable wax block (7" x 3" x 1.5")</li>
+                                <li class="fs-5">Hot glue gun</li>
+                                <li class="fs-5">Smooth-Cast 300Q</li>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Designing the mold</h2>
+                                <p class="fs-5 mb-4">I wanted to create a cute jello mold of a cartoon blob person laying flat on their back. Dumb idea, I know. Here's an initial sketch:</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/diagram.jpeg" alt="Diagram" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <p class="fs-5 mb-4">From there, I created my model in Fusion 360 fairly easily, and changed to 'Manufacture' mode in Fusion 360. This is Autodesk's CAM interface where you can generate toolpaths, simulate the milling process, and much more. Below if the final model I ended up with:</p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-8">
+                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/finishedobject.jpeg" alt="Finished Fusion 360 model" style="width:100%"></figure>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Milling the mold</h2>
+                                <p class="fs-5 mb-4">Creating a mold out of machinable wax involves rough and fine passes for efficiency, surface quality, tool longevity, precision, heat management, and chip control. The roughing pass removes material quickly, while the finishing pass ensures a smooth, precise surface, meeting tolerance requirements and extending tool life. This process maintains quality and efficiency while preventing overheating and facilitating chip evacuation.</p>
+                                <p class="fs-5 mb-4">For the roughing pass:</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">In Fusion 360, select the program you want for your 2.5D cut (select 'Adaptive Clearing')</li>
+                                    <li class="fs-5 mb-4">Create a tool that represents your 1/8" endmill - at this point, I ran into some warning about collisions on my walls, so I tapered the walls to a 10 degree incline so the endmill wouldn't run into the sides of the mold.</li>
+                                    <li class="fs-5 mb-4">Orient your model if necessary - I had to reset my origin to the bottom right corner. If I didn't catch this, my whole mold would've missed the wax stock.</li>
+                                    <li class="fs-5 mb-4">Calculate the toolpath</li>
+                                    <li class="fs-5 mb-4">Preview the toolpath - I set my settings as follows, with 12000 RPM for the spindle speed and .08 for the 'Feed per tooth' to speed things up.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-4">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/settings.jpeg" alt="Settings" style="width:100%"></figure>
+                                        </div>
+                                        <div class="col-8">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/roughtoolpath.jpeg" alt="Rough toolpath" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                                <p class="fs-5 mb-4">For the finishing pass:</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">In Fusion 360, select the program you want for your 3D cut (select 'Parallel')</li>
+                                    <li class="fs-5 mb-4">Select the tool you created earlier (the 1/8" endmill)</li>
+                                    <li class="fs-5 mb-4">Calculate the toolpath</li>
+                                    <li class="fs-5 mb-4">Preview the toolpath</li>
+                                    <div class="row mb-4">
+                                        <div class="col-8">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/finetoolpath.jpeg" alt="Fine toolpath" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                                <p class="fs-5 mb-4">To move from Fusion 360 to ShopBot software:</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Click on your grouping of tool paths and select 'Post Process'</li>
+                                    <li class="fs-5 mb-4">Select a file location to export your .sbp - this is a file type ShopBot will be happy with</li>
+                                    <li class="fs-5 mb-4">Plug USB with your .sbp file into computer attached to ShopBot</li>
+                                    <li class="fs-5 mb-4">Hot glue your machinable wax down to a small board you can nail into the bed of the ShopBot</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/hotglue.jpeg" alt="Hot glue" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Cry a little bit at ShopBot's software from the 1990's</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/shopbotdesign.jpg" alt="Shitty interface" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Zero your machine</li>
+                                    <li class="fs-5 mb-4">Preview the toolpaths - because we're using the ShopBot, both cuts will be done sequentially with the same endmill because ShopBot can run a bit faster than something like the Roland SRM-20.</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/shopbottoolpath.jpeg" alt="ShopBot toolpath" style="width:100%"></figure>
+                                        </div>
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/finishedblue.jpeg" alt="ShopBot toolpath" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Casting the jello mold</h2>
+                                <p class="fs-5 mb-4">Now that we have our machined wax block, we can start casting our plastic mold that will cast our finished jello project. In order to end up with a food safe jello product in the end, I'd have to ensure that each and every step was food safe-- from milling the wax mold to casting my jello mold with food safe polymers. We had limited materials in time in the span of this one week project, so I'm just going to pretend that I'd ever eat this jello guy.</p>
+                                <p class="fs-5 mb-4">Every silicone, rubber, resin, or putty has different instructions for use. For this project, I used Smooth-Cast 300Q, which is a white plastic that cures within 5 minutes.</p>
+                                <ol>
+                                    <li class="fs-5 mb-4">Put on gloves, mask, and move to fume hood or well ventilated area</li>
+                                    <li class="fs-5 mb-4">Mix two curing agents together, trying not to introduce bubbles to mixture</li>
+                                    <li class="fs-5 mb-4">Slowly pour mixture in a thin thread into mold, starting in deepest pockets first. Remember: this material cures within minutes, so work quickly!</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/mixing.jpeg" alt="Mixing" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                    <li class="fs-5 mb-4">Dispose of trash and wait 5+ minutes for mold to cure</li>
+                                    <li class="fs-5 mb-4">Once curing has completed, twist mold like an ice cube tray to pop out parts of the design gently</li>
+                                    <li class="fs-5 mb-4">If that doesn't work, hack at it with a box cutter like so:</li>
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/thumbnail.jpeg" alt="Hacking" style="width:100%"></figure>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <section class="mb-4">
+                                <h2 class="fw-bolder mt-5 mb-4">Finished product</h2>
+                                <p class="fs-5 mb-4">This project was... humbling, to say the least. It wasn't my first time working with molding and casting, but it was my first time working with a larger milling machine like the ShopBot. My finished product here looks super wonky, almost like a turtle.</p>
+                                <p class="fs-5 mb-4">If I could go back and do this again, I'd be more adamant about using a 1/32" endmill for a my finishing pass-- I was told by teaching staff to use the same endmill for both the rough and finishing pass to save time given the limited resources we had available in the lab. This finer point would have given me more detailed features. Additionally, I would've requested a longer endmill for the ShopBot. Given we only had a short endmill available, it was unable to drill deep into my mold without the collet hitting my mold's walls.</p>
+                                <p class="fs-5 mb-4">If you'd like to recreate this project, you can download my STL and SBP files <a href="assets/week7/week7.zip" target="_blank">here</a>.</p>
+                                <div class="row mb-4">
+                                    <div class="col-8">
+                                        <figure class="mb-4"><img class="img-fluid rounded" src="assets/week7/finishedmold.jpeg" alt="Finished mold" style="width:100%"></figure>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
